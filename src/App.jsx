@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 
 function App() {
+  // Datos con props dinámicas
   const data = [
     {
       lang: "React",
