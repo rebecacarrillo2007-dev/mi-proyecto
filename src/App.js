@@ -1,41 +1,27 @@
-import React from "react";
-import Card from "./Card";
+import React, { useEffect, useState } from "react";
+import Alumnos from "./api/Alumnos";
 
 function App() {
-  const data = [
-    {
-      lang: "Python..",
-      url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-      fcolor: "#1E3A8A", // Azul oscuro
-      scolor: "#ffffff"
-    },
-    {
-      lang: "PHP..",
-      url: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-      fcolor: "#1F2937", // Gris oscuro
-      scolor: "#ffffff"
-    },
-    {
-      lang: "Java..",
-      url: "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-      fcolor: "#991B1B", // Rojo oscuro
-      scolor: "#ffffff"
-    }
-  ];
+  const [alumnos, setAlumnos] = useState([]);
+  const alumnoCtrl = new Alumnos();
+
+  useEffect(() => {
+    (async () => {
+      const data = await alumnoCtrl.consultar();
+      setAlumnos(data);
+    })();
+  }, []);
 
   return (
-    <div style={{ padding: "40px", textAlign: "center" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center" }}>
-        {data.map(({ lang, url, fcolor, scolor }) => (
-          <Card
-            key={lang}
-            lang={lang}
-            url={url}
-            fcolor={fcolor}
-            scolor={scolor}
-          />
+    <div style={{ padding: "20px" }}>
+      <h1>Lista de Alumnos</h1>
+      <ul>
+        {alumnos.map((a) => (
+          <li key={a.id}>
+            {a.nombre} - {a.email}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
