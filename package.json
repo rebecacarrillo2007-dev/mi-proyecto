@@ -2,6 +2,7 @@
   "name": "mi-proyecto",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rebecacarrillo2007-dev.github.io/mi-proyecto",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
