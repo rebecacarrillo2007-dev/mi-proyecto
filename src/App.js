@@ -4,29 +4,28 @@ import Card from "./Card";
 function App() {
   const data = [
     {
-      lang: "React",
-      url: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-      fcolor: "#e8f5ff",
-      scolor: "#007acc"
+      lang: "Python..",
+      url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      fcolor: "#1E3A8A", // Azul oscuro
+      scolor: "#ffffff"
     },
     {
-      lang: "Vue",
-      url: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
-      fcolor: "#e9fce9",
-      scolor: "#42b883"
+      lang: "PHP..",
+      url: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+      fcolor: "#1F2937", // Gris oscuro
+      scolor: "#ffffff"
     },
     {
-      lang: "Angular",
-      url: "https://angular.io/assets/images/logos/angular/angular.svg",
-      fcolor: "#ffe9e9",
-      scolor: "#dd0031"
+      lang: "Java..",
+      url: "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+      fcolor: "#991B1B", // Rojo oscuro
+      scolor: "#ffffff"
     }
   ];
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Mis Cards</h1>
-      <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+    <div style={{ padding: "40px", textAlign: "center" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center" }}>
         {data.map(({ lang, url, fcolor, scolor }) => (
           <Card
             key={lang}

@@ -1,15 +1,26 @@
 .card {
-  width: 150px;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  border-radius: 15px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
+  gap: 15px;
 }
 
 .card img {
-  width: 80px;
-  margin-top: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .card:hover {
